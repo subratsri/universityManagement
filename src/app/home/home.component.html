@@ -1,0 +1,54 @@
+<div class="home">
+  <h2>Welcome Admin</h2>
+  <p>Please select from any of the following to perform CRUD over them!</p>
+  <button (click)="student()">Student</button>
+  <button (click)="professor()">Professor</button>
+  <button (click)="department()">Department</button><br /><br /><br />
+  <div class="student" *ngIf="flag1">
+    <span *ngIf="!b1">
+    Enter student id: <input type="email" [(ngModel)]="semail" placeholder="Email...">
+    <button (click)="getStudent()">Get student details</button>
+    <br><br><br><br>
+    <button (click)="createStudent()">Create new entry in student</button>
+    </span>
+    <div *ngIf="b1">
+        <p>Enter Name: <input type="name" name="sName"></p>
+        <p>Enter DOB: <input type="date" name="sDob"></p>
+        <p>Enter branch: <input type="name" name="sBranch"></p>
+        <p>Enter department: <input type="name" name="sDept"></p>
+        <button (click)="sCreate()">Create</button>
+        <button (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+  <div class="professor" *ngIf="flag2">
+      <span *ngIf="!b2">
+      Enter professor id: <input type="email" [(ngModel)]="pemail" placeholder="Email...">
+      <button (click)="getProfessor()">Get professor details</button>
+      <br><br><br><br>
+      <button (click)="createProfessor()">Create new entry in professor</button>
+      </span>
+      <div *ngIf="b2">
+        <p>Enter Name: <input type="name" name="pName"></p>
+        <p>Enter DOB: <input type="date" name="pDob"></p>
+        <p>Enter designation: <input type="name" name="pDesignation"></p>
+        <p>Enter department: <input type="name" name="pDept"></p>
+        <p>Enter Salary: <input type="number" name="pSalary"></p>
+        <button (click)="pCreate()">Create</button>
+        <button (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  <div class="department" *ngIf="flag3">
+      <span *ngIf="!b3">
+      Enter department id: <input type="text" [(ngModel)]="did" placeholder="Department id...">
+      <button (click)="getDepartment()">Get department details</button>
+      <br><br><br><br>
+      <button (click)="createDepartment()">Create a new department</button>
+      </span>
+      <div *ngIf="b3">
+        <p>Enter new department name: <input type="text" name="deptName"></p>
+        <p>Enter a department number: <input type="text" name="deptNum"></p>
+        <button (click)="dCreate()">Create</button>
+        <button (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+</div>

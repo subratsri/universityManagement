@@ -1,0 +1,18 @@
+<div class="student">
+    <h1>Details for {{student.name}}</h1>
+    <small>Notice: to edit <button (click)="edit()">click here</button>, to remove the student from database <button (click)="delete()">click here</button></small>
+    <p>Name:  <span *ngIf="!flag">{{student.name}}</span><small *ngIf="flag">{{student.name}}</small> &nbsp; <input type="text" placeholder="Enter new name" *ngIf="flag"></p>
+    <p>Department: <span *ngIf="!flag">{{student.department}}</span><small *ngIf="flag">{{student.department}}</small> &nbsp; <input type="text" placeholder="Enter new department" *ngIf="flag"></p>
+    <p>Date of birth: <span *ngIf="!flag">{{student.birthDate}}</span><small *ngIf="flag">{{student.birthDate}}</small> &nbsp; <input type="date" placeholder="Enter new birthdate" *ngIf="flag"></p>
+    <div>
+      Subject
+      <span  *ngIf="!flag">
+      <p *ngFor="let subject of subjects">Name: {{subject.subjectName}}&nbsp; &nbsp;&nbsp;Professor: {{subject.professorName}}</p>
+      </span>
+      <span  *ngIf="flag">
+      <p *ngFor="let subject of subjects">Name: <small>{{subject.subjectName}} <input type="text" name="newSubjectName" placeholder="Enter new Subject Name"></small>&nbsp; &nbsp;&nbsp;Professor: <small>{{subject.professorName}}</small><input type="text" name="newProfessorName" placeholder="Enter new professor name"></p>
+      </span>
+    </div>
+    <p>Email: <span *ngIf="!flag">{{student.email}}</span><small *ngIf="flag">{{student.email}}</small> &nbsp; <input type="email" placeholder="Enter new email" *ngIf="flag"></p>
+    <button (click)="update()" *ngIf="flag">Update</button>  <button (click)="cancel()" *ngIf="flag">Cancel</button>
+  </div>

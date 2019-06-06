@@ -1,0 +1,10 @@
+<div class="professor">
+  <h1>Details for {{professor.name}}</h1>
+  <small>Notice: to edit <button (click)="edit()">click here</button>, to remove the professor from database <button (click)="delete()">click here</button></small>
+  <p>Name:  <span *ngIf="!flag">{{professor.name}}</span><small *ngIf="flag">{{professor.name}}</small> &nbsp; <input type="text" placeholder="Enter new name" *ngIf="flag"></p>
+  <p>Department: <span *ngIf="!flag">{{professor.department}}</span><small *ngIf="flag">{{professor.name}}</small> &nbsp; <input type="text" placeholder="Enter new deprtment" *ngIf="flag"></p>
+  <p>Designation: <span *ngIf="!flag">{{professor.designation}}</span><small *ngIf="flag">{{professor.designation}}</small> &nbsp; <input type="text" placeholder="Enter new designation" *ngIf="flag"></p>
+  <p>Date of birth: <span *ngIf="!flag">{{professor.birthDate}}</span><small *ngIf="flag">{{professor.birthDate}}</small> &nbsp; <input type="date" placeholder="Enter new birthdate" *ngIf="flag"></p>
+  <p>Email: <span *ngIf="!flag">{{professor.email}}</span><small *ngIf="flag">{{professor.email}}</small> &nbsp; <input type="email" placeholder="Enter new email" *ngIf="flag"></p>
+  <button (click)="update()" *ngIf="flag">Update</button> <button (click)="cancel()">Cancel</button>
+</div>

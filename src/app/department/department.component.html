@@ -1,0 +1,7 @@
+<div class="department">
+    <h1>Details for department: {{department.name}}</h1>
+    <small>Notice: to edit <button (click)="edit()">click here</button>, to remove the department from database <button (click)="delete()">click here</button></small>
+    <p>Name:  <span *ngIf="!flag">{{department.name}}</span><small *ngIf="flag">{{department.name}}</small> &nbsp; <input type="text" placeholder="Enter new name" *ngIf="flag"></p>
+    <p>Number: <span *ngIf="!flag">{{department.deptNumber}}</span><small *ngIf="flag">{{department.deptNumber}}</small> &nbsp; <input type="number" placeholder="Enter new deptNumber" *ngIf="flag"></p>
+    <button (click)="update()" *ngIf="flag">Update</button> <button (click)="cancel()">Cancel</button>
+  </div>
